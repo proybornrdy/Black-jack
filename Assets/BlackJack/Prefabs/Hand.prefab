@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224792711922858810}
   - component: {fileID: 222673797023522128}
   - component: {fileID: 114156801881199254}
+  - component: {fileID: 114653093057693086}
   m_Layer: 5
   m_Name: Hand
   m_TagString: Untagged
@@ -141,6 +142,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114653093057693086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213799197568612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5339a3b5ea27e42acf4e703a013d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shape: 0
+  number: 0
+  cardLeft: 0
 --- !u!222 &222673797023522128
 CanvasRenderer:
   m_ObjectHideFlags: 1
