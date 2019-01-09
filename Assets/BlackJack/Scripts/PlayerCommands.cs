@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCommands : GameController {
+public class PlayerCommands : MonoBehaviour {
 
     public void stand()
     {

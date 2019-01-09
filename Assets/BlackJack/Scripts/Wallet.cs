@@ -3,42 +3,60 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Wallet : MonoBehaviour {
+public class Wallet{
 
+    public int money, betAmount, totalMoneySpent, totalMoneyEarned;
 
-    GameController gc;
-    UiContoller uc;
-    Wallet wallet;
-    public int money, betAmount;
-
-
-    public void Start()
+    //player's wallet constructor
+    public Wallet(int money = 10000, int betAmount = 100, int totalMoneySpent = 0, int totalMoneyEarned = 0)
     {
-        gc = GameObject.Find("GameController").GetComponent<GameController>();
-        uc = GameObject.Find("GameController").GetComponent<UiContoller>();
-        betAmount = 100;
+        this.money = money;
+        this.betAmount = betAmount;
+        this.totalMoneyEarned = totalMoneyEarned;
+        this.totalMoneySpent = totalMoneySpent;
     }
 
-    public void increaseBet()
+    public void updateWallet(int money = 0, int betAmount = 0, int totalMoneySpent = 0, int totalMoneyEarned = 0)
     {
-        if (gc.money - (betAmount + 100) >= 0)
-        {
-            betAmount += 100;
-            uc.updateBetAmountUI(betAmount);
-        }        
+        this.money += money;
+        this.betAmount += betAmount;
+        this.totalMoneyEarned += totalMoneyEarned;
+        this.totalMoneySpent += totalMoneySpent;
     }
-    public void decreaseBet()
-    {
-        if (betAmount > 100)
-        {
-            betAmount -= 100;
-            uc.updateBetAmountUI(betAmount);
-        }
-    }
-    public void bet()
-    {
-        gc.money = gc.money - betAmount;
-        uc.updateMoneyUI(gc.money);
-        gc.startBlackJack();
-    }
+
+    //GameController gc;
+    //UiContoller uc;
+    //Wallet wallet;
+    //public int money, betAmount;
+
+
+    //public void Start()
+    //{
+    //    gc = GameObject.Find("GameController").GetComponent<GameController>();
+    //    uc = GameObject.Find("GameController").GetComponent<UiContoller>();
+    //    betAmount = 100;
+    //}
+
+    //public void increaseBet()
+    //{
+    //    if (gc.money - (betAmount + 100) >= 0)
+    //    {
+    //        betAmount += 100;
+    //        uc.updateBetAmountUI(betAmount);
+    //    }        
+    //}
+    //public void decreaseBet()
+    //{
+    //    if (betAmount > 100)
+    //    {
+    //        betAmount -= 100;
+    //        uc.updateBetAmountUI(betAmount);
+    //    }
+    //}
+    //public void bet()
+    //{
+    //    gc.money = gc.money - betAmount;
+    //    uc.updateMoneyUI(gc.money);
+    //    gc.startBlackJack();
+    //}
 }

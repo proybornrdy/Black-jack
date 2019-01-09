@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class Card : MonoBehaviour {
-    GameController gc;
 
-    public int shape;
-    public int number;
+    public int cardValue;
+    public string cardShape;
 
-    public int cardLeft;
-    private void Awake()
+    public Card(int cardValue, string cardShape)
     {
-        gc = GameObject.Find("GameController").GetComponent<GameController>();
-        cardLeft = gc.deckStatus.cardLeft;
-        this.shape = Random.Range(1, 5);
-        this.number = Random.Range(1, 11);
-        this.gameObject.GetComponent<TextMeshProUGUI>().text = this.number.ToString();
+        this.cardValue = cardValue;
+        this.cardShape = cardShape;
     }
+    public void updateCard(Card card)
+    {
+        this.cardValue = card.cardValue;
+        this.cardShape = card.cardShape;
+    }
+
+    public void Awake()
+    {
+        this.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = cardValue.ToString() + "\r\n" + cardShape;
+    }
+
+
 }
