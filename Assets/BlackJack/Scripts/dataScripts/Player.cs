@@ -26,20 +26,29 @@ public class Player{
         foreach (Card card in currHand)
         {
             int cardPoint = card.cardValue;
-            Debug.Log(cardPoint);
+           
             
             if (cardPoint > 10) cardPoint = 10;
             sum += cardPoint;
-            Debug.Log(playerPoint[handIndex]);
         }
         playerPoint[handIndex] = sum;
         return playerPoint[handIndex];
     }
 
-    //performs when player requested split
-    public void addPlayerHand()
+    
+    public bool checkBust(int handIndex)
     {
+        Debug.Log("potin "+ playerPoint[handIndex]);
+        if (playerPoint[handIndex] > 21)
+        {
+            //busted clear hand 
+            List<Card> currHand = new List<Card>();
+            playerHand[handIndex] = currHand;
+            playerPoint[handIndex] = 0;
 
+            return true;
+        }
+        else return false;
     }
 	
 }

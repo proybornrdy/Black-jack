@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour {
         this.betAmount += playerBet * i;
         if (betAmount <= player.playerWallet.money && betAmount >= 0)
         {
-            Debug.Log(betAmount);
             betField.GetComponent<TextMeshProUGUI>().text = betAmount.ToString();
             moneyField.GetComponent<TextMeshProUGUI>().text = (player.playerWallet.money-betAmount).ToString();
         }       
@@ -59,20 +58,43 @@ public class GameController : MonoBehaviour {
 
     public void hitCard()
     {
-        StartCoroutine(dealSingleCard());
+        StartCoroutine(dealSingleCard(player, playerPos));
+        
+        
     }
 
-    IEnumerator dealSingleCard()
+    IEnumerator dealSingleCard(Player player , GameObject playerPos)
     {
         yield return new WaitForSeconds(1);
         Card newCard = deck.dealCard();
         player.playerHand[0].Add(newCard);
         
         cardCountField.GetComponent<TextMeshProUGUI>().text = deck.cardLeft.ToString();
-        cardPrefab.GetComponent<Card>().updateCard(newCard);
+        cardPrefab.GetComponent<cardPrefab>().updateCard(newCard);
         Instantiate(cardPrefab, playerPos.transform.position + new Vector3(gap, 0, 0), playerPos.transform.rotation, playerPos.transform);
+        cardPrefab.GetComponent<cardPrefab>().updateCard(newCard);
         valueP.GetComponent<TextMeshProUGUI>().text = player.getPlayerPoint(0).ToString();
         gap += 30;
+
+        yield return new WaitForSeconds(1);
+        bool checkBust = player.checkBust(0);
+        Debug.Log(checkBust);
+
+        if (checkBust)
+        {
+            //player is busted
+            //  1. clear playerField and dealerField
+            //  2. re -call bet prompt (unity side: can be ignored)
+            foreach (Transform child in playerPos.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            foreach (Transform child in dealerPos.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
     }
 
     IEnumerator dealCardsForAll(int repeat = 1)
@@ -83,9 +105,11 @@ public class GameController : MonoBehaviour {
         {
             yield return new WaitForSeconds(1);
             Card newCard = deck.dealCard();
+
+            
             startingPlayerHand.Add(newCard);
             cardCountField.GetComponent<TextMeshProUGUI>().text = deck.cardLeft.ToString();
-            cardPrefab.GetComponent<Card>().updateCard(newCard);
+            cardPrefab = cardPrefab.GetComponent<cardPrefab>().updateCard(newCard);
             Instantiate(cardPrefab, playerPos.transform.position + new Vector3(gap, 0, 0), playerPos.transform.rotation, playerPos.transform);
             
 
@@ -93,10 +117,10 @@ public class GameController : MonoBehaviour {
             newCard = deck.dealCard();
             startingDealerHand.Add(newCard);
             cardCountField.GetComponent<TextMeshProUGUI>().text = deck.cardLeft.ToString();
-            cardPrefab.GetComponent<Card>().updateCard(newCard);
+            cardPrefab = cardPrefab.GetComponent<cardPrefab>().updateCard(newCard);
             Instantiate(cardPrefab, dealerPos.transform.position + new Vector3(gap, 0, 0), dealerPos.transform.rotation, dealerPos.transform);
+            cardPrefab.GetComponent<cardPrefab>().updateCard(newCard);
 
-            
             gap += 30;
         }
         player.playerHand.Add(startingPlayerHand);

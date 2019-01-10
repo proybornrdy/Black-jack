@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Card : MonoBehaviour {
+public class Card {
 
     public int cardValue;
-    public string cardShape;
+    public string cardShape;    
 
-    public Card(int cardValue, string cardShape)
+
+    public void makeCard(int cardValue, string cardShape)
     {
         this.cardValue = cardValue;
         this.cardShape = cardShape;
@@ -18,11 +19,5 @@ public class Card : MonoBehaviour {
         this.cardValue = card.cardValue;
         this.cardShape = card.cardShape;
     }
-
-    public void Awake()
-    {
-        this.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = cardValue.ToString() + "\r\n" + cardShape;
-    }
-
 
 }

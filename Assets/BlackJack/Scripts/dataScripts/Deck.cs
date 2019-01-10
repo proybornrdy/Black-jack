@@ -38,7 +38,6 @@ public class Deck {
 public class Cards
 {
 
-    
     public int shapeCountH, shapeCountD, shapeCountC, shapeCountS;
     public int sameValueCount, cardValue;
 
@@ -79,7 +78,8 @@ public class Cards
         if (shapeCountH > 0) shape.Add("Heart");
         if (shapeCountS > 0) shape.Add("Spade");
         int shapeIndex = Random.Range(0, shape.Count);
-        Card pickedCard = new Card(cardValue, shape[shapeIndex]);
+        Card pickedCard = new Card();
+        pickedCard.makeCard(cardValue, shape[shapeIndex]);
         updateCards(shape[shapeIndex]);
         return pickedCard;
     }

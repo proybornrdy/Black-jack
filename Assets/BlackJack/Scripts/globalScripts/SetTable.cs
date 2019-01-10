@@ -49,6 +49,13 @@ public class SetTable : MonoBehaviour {
         }        
     }
 
+    public void resetTable()
+    {
+
+    }
+
+
+
     public void resetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
