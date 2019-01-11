@@ -6,14 +6,23 @@ using UnityEngine;
 public class Wallet{
 
     public int money, betAmount, totalMoneySpent, totalMoneyEarned;
+    public int[] handBets;
 
     //player's wallet constructor
-    public Wallet(int money = 10000, int betAmount = 100, int totalMoneySpent = 0, int totalMoneyEarned = 0)
+    public Wallet(int money = 10000, int betAmount = 100 , int[] handBets = null)
     {
         this.money = money;
-        this.betAmount = betAmount;
-        this.totalMoneyEarned = totalMoneyEarned;
-        this.totalMoneySpent = totalMoneySpent;
+        
+        if (handBets == null)
+        {
+            int[] sampleHand = { betAmount };
+            this.handBets = sampleHand;
+        }
+        else
+        {
+            this.handBets = handBets;
+        }      
+        
     }
 
     public void updateWallet(int money = 0, int betAmount = 0, int totalMoneySpent = 0, int totalMoneyEarned = 0)

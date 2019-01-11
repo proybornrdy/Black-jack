@@ -4,11 +4,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
-    //this class controlls general gameplay flow
+public class GameController : MonoBehaviour { // collection of required data that other scripts created
 
+    //scripts
+    SetTable st;
+
+    // datas recieved from table setup in startMenu 
+    private List<string> tableOptions;
+
+    // in game data
     public Deck deck;
+    private List<Player> players;
+
+
+
     public Player player, dealer;
+
+    public GameObject[] cards;
 
     public GameObject moneyField, betField, cardCountField,
         cardPrefab, playerPos, dealerPos,
@@ -23,7 +35,11 @@ public class GameController : MonoBehaviour {
     public void Start()
     {
         //pre-stage setup
+        st = GameObject.Find("TableFunction").GetComponent<SetTable>();
+        tableOptions = new List<string>();
         deck = new Deck();
+        players = new List<Player>();
+
         player = new Player();
         dealer = new Player();
         moneyField.GetComponent<TextMeshProUGUI>().text = player.playerWallet.money.ToString() ;
@@ -33,6 +49,31 @@ public class GameController : MonoBehaviour {
         gap = 0;
 
     }
+
+
+    public void initTableSetup(List<string> options)
+    {
+        /**this function runs Only when the game is started from new or reset**/
+        this.tableOptions = options;
+        int deckCount = int.Parse(options[0]);
+        //create Deck with given information
+        deck = new Deck(deckCount);
+        players.Add(new Player());
+        st.tableSetup( deck, players);
+
+    }
+
+    public void tableSetUp()
+    {
+        /**when the round ends run this to reset the table, yet keeps status of a player**/
+    }
+    public List<string> getValidOptions()
+    {
+        if (tableOptions.Count > 0) return tableOptions;
+        return null;
+    }
+    
+
 
     //betting stage
     public void changeBetAmount(int i)

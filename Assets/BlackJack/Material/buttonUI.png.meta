@@ -7,6 +7,17 @@ TextureImporter:
     21300004: buttonUI_2
     21300006: buttonUI_3
     21300008: buttonUI_4
+    21300010: hand
+    21300012: busted_txt
+    21300014: buttonUI_5
+    21300016: startUI
+    21300018: blackjack_txt
+    21300020: optionUI
+    21300022: leftUI
+    21300024: rightUI
+    21300026: backUI
+    21300028: startUI_1
+    21300030: startUI_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -125,8 +136,8 @@ TextureImporter:
       name: buttonUI_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1223
+        x: 12
+        y: 1224
         width: 395
         height: 174
       alignment: 0
@@ -136,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58da295808eadc2458b21ad616bfaa1b
+      spriteID: f41f05d822cde2b419e8928b3b728810
       vertices: []
       indices: 
       edges: []
@@ -145,8 +156,8 @@ TextureImporter:
       name: buttonUI_1
       rect:
         serializedVersion: 2
-        x: 438
-        y: 1224
+        x: 451
+        y: 1226
         width: 199
         height: 173
       alignment: 0
@@ -156,7 +167,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef535072748c144c8fe7e318b1473f7
+      spriteID: 81d7073336f4d4249829100725dc19fb
       vertices: []
       indices: 
       edges: []
@@ -165,8 +176,8 @@ TextureImporter:
       name: buttonUI_2
       rect:
         serializedVersion: 2
-        x: 693
-        y: 1222
+        x: 694
+        y: 1226
         width: 197
         height: 174
       alignment: 0
@@ -176,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2682f3587fb03d44f8d270610bebf200
+      spriteID: 52276c5f5d40f6b469222aa90ea775a0
       vertices: []
       indices: 
       edges: []
@@ -185,8 +196,8 @@ TextureImporter:
       name: buttonUI_3
       rect:
         serializedVersion: 2
-        x: 930
-        y: 1159
+        x: 935
+        y: 1163
         width: 195
         height: 237
       alignment: 0
@@ -196,7 +207,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a08abd81d7271a24fa85b4ce60048ce1
+      spriteID: fce9ef5e8c23e5b4082316613de76002
       vertices: []
       indices: 
       edges: []
@@ -205,8 +216,8 @@ TextureImporter:
       name: buttonUI_4
       rect:
         serializedVersion: 2
-        x: 1165
-        y: 1162
+        x: 1174
+        y: 1164
         width: 195
         height: 236
       alignment: 0
@@ -216,7 +227,227 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e91e7ba4c95224a8e9e76e2b95a71f
+      spriteID: 6a918ab937aeb86498f954f920888abb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1212
+        width: 134
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcc1bef3ad71624d839c6aefb7630ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: busted_txt
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1002
+        width: 338
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5472d9422f21e42ab7bff42d5bd549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonUI_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1030
+        width: 358
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29d57146ecfbaf4592a9b9a08ce07e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackjack_txt
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 885
+        width: 392
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfdfc40b83a9df47b42da39ec04850b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: startUI
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 860
+        width: 348
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97db053ef8b31043837838f8910278d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: optionUI
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 861
+        width: 348
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f152d8e02abf0ac4a8cf9493533c4d33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leftUI
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 889
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31337c8191466d7448ef15ec2c1648d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rightUI
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 889
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c8a0f7d15881f43bec664cc42634e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backUI
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 722
+        width: 348
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0bbe78d5412274593b707f0eca6675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: startUI_1
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 747
+        width: 295
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e940364f95454dbd88f0a4f78506f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: startUI_2
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 341
+        width: 476
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cb93f667c0b034388e62ded974edc8
       vertices: []
       indices: 
       edges: []

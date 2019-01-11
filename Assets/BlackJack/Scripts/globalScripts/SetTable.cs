@@ -14,14 +14,28 @@ public class SetTable : MonoBehaviour {
     public GameObject totalCardsObj;
     private string deckCount;
 
-    GameController gc;
+
+    // contains UI that needs to be displayed on screen
+    // dataUIs[0] = total cards left in deck 
+    // dataUIs[1] = player's money left in wallet    
+    public GameObject[] dataUIs;
 
     public void Start()
     {
-        gc = GameObject.Find("GameController").GetComponent<GameController>();
-        deckCount = deckCountObj.GetComponent<TextMeshProUGUI>().text;
-        //placeholder for deckStat
-        deckStat = new Deck(int.Parse(deckCount));
+       
+    }
+
+    public void tableSetup( Deck deck, List<Player> players)
+    {        
+        int numOfDeck = deck.deckCount;
+        int cardsLeft = deck.cardLeft;
+
+        Player player = players[0]; //TODO: figure out how to set up multiplayer environment
+        int playerMoney = player.playerWallet.money;
+
+        dataUIs[0].GetComponent<TextMeshProUGUI>().text = cardsLeft.ToString();
+        dataUIs[1].GetComponent<TextMeshProUGUI>().text = playerMoney.ToString();
+        
     }
 
     public void finishSetUp (Button startBtn)
@@ -29,8 +43,8 @@ public class SetTable : MonoBehaviour {
         //setup new deck according to the setting
         deckStat = new Deck(int.Parse(deckCount));
         //update new deck to main controlling system -- GameController.cs
-        gc.deck = deckStat;
-        gc.gameStatus = true;
+        //gc.deck = deckStat;
+        //gc.gameStatus = true;
         
         //update ui
         totalCardsObj.GetComponent<TextMeshProUGUI>().text = deckStat.cardLeft.ToString() ;

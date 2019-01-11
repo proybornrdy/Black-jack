@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Deck {
 
-    public int deckCount,cardLeft, shufflePoint;
+    public int deckCount, cardLeft, shufflePoint;
     public Cards cardStat;
     public List<Cards> cardList;
 
@@ -25,6 +25,9 @@ public class Deck {
      
     public Card dealCard()
     {
+        /** picks random card within deck
+            then, removes that card from the deck
+            returns picked card **/
         int index = Random.Range(0, cardList.Count);
         Cards pickedCard = cardList[index];
         if (pickedCard.sameValueCount == 0) cardList.RemoveAt(index);
