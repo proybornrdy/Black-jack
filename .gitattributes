@@ -1,2 +1,2 @@
 # Auto detect text files and perform LF normalization
-Assets/*.shader linguist-vendored
+*.shader linguist-vendored
